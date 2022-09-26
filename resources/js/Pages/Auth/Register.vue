@@ -22,7 +22,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+  <GuestLayout :breadcrumbsHide="true">
         <Head title="Register" />
        
         <div class="bg-white grid md:grid-cols-2 gap-3 shadow-lg rounded-lg shadow-blue-700/50 m-2 mt-1 md:mt-5 p-4 px-7 place-content-center">

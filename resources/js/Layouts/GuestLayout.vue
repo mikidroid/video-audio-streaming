@@ -2,19 +2,25 @@
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import NavGuest from '@/Components/Nav/Nav-guest.vue';
 import SideMenu from '@/Components/Nav/Side-menu.vue';
+import Breadcrumbs from '@/Pages/inc/breadcrumbs.vue';
+import Footer from '@/Pages/inc/footer.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+defineProps(['currentPage','breadcrumbsHide','noSidebar'])
+
 </script>
 
 <template>
-  <div class="container mx-auto md:flex">
-  <SideMenu class="hidden md:flex"/>
+  <div class="container mb-9 mx-auto md:flex">
+  <SideMenu v-if="noSidebar" class="hidden md:flex"/>
   <div class="container mx-auto">
   <NavGuest/>
    <div class="md:mt-[80px] mt-[60px] p-1 m-1 py-2 px-3 md:py-3 md:px-6">
+   <Breadcrumbs class="my-6" v-if="!breadcrumbsHide" :currentPage="currentPage"/>
    <slot/>
    </div>
   </div>
   </div>
+  <Footer/>
 </template>
 
 <style>

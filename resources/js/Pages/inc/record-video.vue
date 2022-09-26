@@ -3,7 +3,9 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import {ref,computed,  onMounted } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 
+const props = defineProps(['playAudio'])
 const link = ref("/videos/video1.webm")
+const audio=ref(props.playAudio)
 const vid = ref()
 const vid2 = ref()
 const _stream =ref()
@@ -13,17 +15,9 @@ const vidOptions = {
   video: {
     cursor: "always"
   },
-  audio: {
-    echoCancellation: true,
-    noiseSuppression: true,
-    sampleRate: 44100
-  }
+  audio: props.playAudio
 }
-/*
- onMounted(()=>{
-      navigator.mediaDevices.getUserMedia(vidOptions) .then((stream)=> {_stream, vid.value.srcObject = stream
-     }, (err)=> alert(err));
- }) */
+
  
  function startRec(){
      // vid.value.src=link.value
@@ -69,6 +63,8 @@ function stopRec(){
        <div class="text-xl pb-3 text-white font-bold">
          Video Record
        </div>
+       
+       
        <div class="divider"/>
       <video autoplay ref="vid"  class="hidden rounded-lg mx-auto" autopictureinpicture="true" controls >
        <source  type="video/webm">

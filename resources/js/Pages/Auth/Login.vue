@@ -26,7 +26,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+  <GuestLayout :breadcrumbsHide="true">
         <Head title="Log in" />
         <div class="bg-white grid md:grid-cols-2 gap-3 shadow-lg rounded-lg shadow-blue-700/50 m-2 mt-1 md:mt-5 p-4 px-7 place-content-center">
         <div class="md:col-span-1 col-span-2 mr-3">

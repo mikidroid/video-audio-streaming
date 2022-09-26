@@ -3,6 +3,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import {ref,computed,  onMounted } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 
+const props = defineProps(['audio'])
 const link = ref("/videos/video1.webm")
 const vid = ref()
 const vid2 = ref()
@@ -13,11 +14,7 @@ const vidOptions = {
   video: {
     cursor: "always"
   },
-  audio: {
-    echoCancellation: true,
-    noiseSuppression: true,
-    sampleRate: 44100
-  }
+  audio: props.audio
 }
 /*
  onMounted(()=>{
@@ -35,8 +32,8 @@ const vidOptions = {
     medi.value.start()
     medi.value.ondataavailable = (e) => {
     vdata.value.push(e.data);
-}
-     }, (err)=> alert(err));
+    }
+    }, (err)=> alert(err));
 }
 
 

@@ -7,8 +7,8 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 
 <template>
   
-  <GuestLayout>
-    <Head title="Welcome" />
+  <GuestLayout :currentPage="'About'">
+ 
     <div>
       About
     </div>

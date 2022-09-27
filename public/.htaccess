@@ -18,10 +18,6 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-    
-    #add this on public/.htaccess to force https for Laravel heruku 
-   RewriteCond %{HTTPS} !=on
-   RewriteCond %{HTTP:X-Forwarded-Proto} !https 
-   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 
 </IfModule>

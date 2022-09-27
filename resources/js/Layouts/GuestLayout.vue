@@ -11,7 +11,7 @@ defineProps(['currentPage','breadcrumbsHide','noSidebar'])
 
 <template>
   <div class="container mb-9 mx-auto md:flex">
-  <SideMenu v-if="noSidebar" class="hidden md:flex"/>
+  <SideMenu v-if="!noSidebar" class="hidden md:flex"/>
   <div class="container mx-auto">
   <NavGuest/>
    <div class="md:mt-[80px] mt-[60px] p-1 m-1 py-2 px-3 md:py-3 md:px-6">

@@ -1,10 +1,11 @@
-import 'flowbite';
+
 import './bootstrap';
 import '../css/app.css';
-
-//import { createApp, h } from 'vue';
-import { createApp,h } from 'vue/dist/vue.esm-bundler';
-
+import { createApp, h } from 'vue';
+//import { createApp,h } from 'vue/dist/vue.esm-bundler';
+//import 'flowbite';
+//import "flowbite/dist/flowbite.css"
+//import "flowbite/dist/flowbite.js"
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
